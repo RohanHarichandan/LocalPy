@@ -2,14 +2,31 @@
 <html>
 <head>
     <title>Python Compiler</title>
-    <link rel="stylesheet" href="static/style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
     <h1>Python Compiler</h1>
+    <div class="container">
     <form action="" method="post">
-        <textarea name="code" cols="40" rows="10">{{ code }}</textarea>
-        <input type="submit" value="Run">
+        
+    <!--   <textarea name="code" cols="40" rows="10">{{ code }}</textarea> -->
+          <!--  <input type="submit" value="Run"> -->
+            <textarea class="code-editor" name="code1" id="code1" placeholder="Enter your Python code here...">{{ code1 }}</textarea>
+            <textarea class="code-editor" name="code1" id="code2" placeholder="Translated code to be shown here..." readonly disabled></textarea> 
+            <!--<button class="button" id="run">Run</button>-->
+            
+            
+            <button class="button" id="translate">Translate</button>
+            <select class="language-select" id="language">
+            <option value="en">hindi</option>
+            <option value="es">odia</option>
+            <input type="submit" value="Run" class="button" id="run">
+        
     </form>
-    <pre>{{ output }}</pre>
+    <div class="output" id="output">
+        <pre >{{ output }}</pre>
+    </div>
+    
+   </div>
 </body>
 </html>

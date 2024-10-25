@@ -6,7 +6,7 @@ app = Flask(__name__)
 @app.route('/', methods=['GET', 'POST'])
 def index():
     if request.method == 'POST':
-        code = request.form['code']
+        code = request.form['code1']
         output = subprocess.check_output(['python', '-c', code])
         return render_template('index.html', code=code, output=output.decode('utf-8'))
     return render_template('index.html')
