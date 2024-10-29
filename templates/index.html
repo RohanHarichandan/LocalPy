@@ -8,19 +8,21 @@
     <h1>Python Compiler</h1>
     
     <form action="" method="post">
+        <!-- Hidden field to specify action type -->
+    <input type="hidden" name="action" id="action" value="run">
         <div class="container">
             <h1 style="color: white; -webkit-text-stroke: 1px black;font-size: 56px;">Python Compiler</h1>
     <!--   <textarea name="code" cols="40" rows="10">{{ code }}</textarea> -->
           <!--  <input type="submit" value="Run"> -->
             <textarea class="code-editor" name="code1" id="code1" placeholder="Enter your Python code here...">{{ code }}</textarea>
-            <textarea class="code-editor" name="code2" id="code2" placeholder="Translated code to be shown here..." readonly disabled></textarea> 
+            <textarea class="code-editor" name="code2" id="code2" placeholder="Translated code to be shown here..." readonly disabled>{{ translated_Code }}</textarea> 
             <!--<button class="button" id="run">Run</button>-->
             
             
-            <button class="button" id="translate">Translate</button>
+            <button type="button" class="button" id="translate" onclick="translateCode()">Translate</button>
             <select class="language-select" id="language">
-            <option value="en">hindi</option>
-            <option value="es">odia</option>
+            <option value="hi">hindi</option>
+            <option value="od">odia</option>
             <input type="submit" value="Run" class="button" id="run">
              <!-- <pre class="output" id="output">
                 <pre >{{ output }}</pre>
@@ -29,7 +31,13 @@
         </div>
     </form>
     
-    
+    <script>
+        function translateCode() {
+            // This function will be called when the Translate button is clicked
+            // It will submit the form with the translation request
+            document.querySelector('form').submit();
+        }
+    </script>
    
 </body>
 </html>

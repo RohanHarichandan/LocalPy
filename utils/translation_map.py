@@ -39,4 +39,4 @@ translation_map_odia = {
     "9": "୯",
     # Add more mappings as needed
 }
-reverse_translation_map_odia = {v: k for k, v in translation_map_odia.items()}
+# reverse_translation_map_odia = {v: k for k, v in translation_map_odia.items()}
